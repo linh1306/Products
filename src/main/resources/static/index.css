@@ -1,0 +1,197 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(41, 41, 49);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 50px;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+            display: block;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        h1 {
+            font-weight: 100;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #d17dbe, #6b7edc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 100px;
+        }
+
+        .text {
+            color: #999;
+            font-size: 36px;
+            font-weight: bold;
+            position: relative;
+            margin-left: 30px;
+        }
+
+        #flip {
+            height: 50px;
+            overflow: hidden;
+        }
+
+        #flip>div>div {
+            color: #fff;
+            padding: 4px 0px;
+            height: 45px;
+            margin-bottom: 45px;
+            display: inline-block;
+        }
+
+        #flip div:first-child {
+            animation: show 15s linear infinite;
+        }
+
+        .text-1 {
+            font-size: 20px;
+            margin: 20px 0px;
+        }
+
+        .btn {
+            width: 150px;
+            height: 40px;
+            background-color: #d17dbe;
+            border: none;
+            border-radius: 20px;
+            text-align: start;
+            padding-left: 20px;
+            cursor: pointer;
+        }
+
+        .btn i {
+            padding-left: 10px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 10px #d17dbe;
+        }
+
+        .btn:hover i {
+            padding-left: 15px;
+        }
+
+        @keyframes show {
+            0% {
+                margin-top: -270px;
+            }
+
+            5% {
+                margin-top: -180px;
+            }
+
+            33% {
+                margin-top: -180px;
+            }
+
+            38% {
+                margin-top: -90px;
+            }
+
+            66% {
+                margin-top: -90px;
+            }
+
+            71% {
+                margin-top: 0px;
+            }
+
+            99.99% {
+                margin-top: 0px;
+            }
+
+            100% {
+                margin-top: -270px;
+            }
+        }
+        @keyframes spin3D {
+            from {
+                transform: rotate3d(.5, .5, .5, 360deg);
+            }
+
+            to {
+                transform: rotate3d(0deg);
+            }
+        }
+
+        .spinner-box {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            margin-left: 80px;
+        }
+
+        .leo {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .blue-orbit {
+            width: 165px;
+            height: 165px;
+            border: 1px solid #46b2e8a5;
+            -webkit-animation: spin3D 3s linear .2s infinite;
+        }
+
+        .green-orbit {
+            width: 210px;
+            height: 210px;
+            border: 2px solid #3fbe74a5;
+            -webkit-animation: spin3D 2s linear 0s infinite;
+        }
+
+        .red-orbit {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #e9340ba5;
+            -webkit-animation: spin3D 1s linear 0s infinite;
+        }
+
+        .white-orbit {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ffffff;
+            -webkit-animation: spin3D 10s linear 0s infinite;
+        }
+
+        .w1 {
+            transform: rotate3D(1, 1, 1, 90deg);
+        }
+
+        .w2 {
+            transform: rotate3D(1, 2, .5, 90deg);
+        }
+
+        .ctn-flip{
+            display: flex;
+        }
+
+        #flip  + div{
+            line-height: 50px;
+        }

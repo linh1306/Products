@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v5.15.4/css/all.css">
+	    <title>Products</title>
+	    <link rel="stylesheet" th:href="@{/products.css}">
+	</head>
+	<body>
+		<div class="container">
+        <h2>List</h2>
+        <div class="ctn-tb">
+            <div class="th">
+                <div class="tr">
+                    <p>Code</p>
+                    <p>Description</p>
+                    <p>Price</p>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+            <div class="tb" >
+                <div class="tr" th:each="product, stat: ${products}">
+                    <p th:text="${product.code}"></p>
+                    <p th:text="${product.description}"></p>
+                    <p th:text="'$'+${product.price}"></p>
+                    <p><a th:href="@{/edit/{i} (i = ${product.code})}"><i class="fas fa-edit"></i></a></p>
+                    <p><a th:href="@{/product/{i} (i = ${product.code})}"><i class="far fa-times"></i></a></p>
+                </div>
+            </div>
+        </div>
+        <button><a th:href="@{/edit/new}">New Product</a></button>
+    </div>
+	</body>
+</html>

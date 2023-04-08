@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="stylesheet" th:href="@{/edit.css}">
+</head>
+
+<body>  
+    <div class="container">
+        <h2 th:text ="${title}"></h2>
+        <form th:object="${product}" th:action="@{/save/{id}(id=${productCode})}" th:method="POST">
+            <table>
+                <p class="warning" th:text="${errorCode}"></p>
+                <tr>
+                    <th>Code</th>
+                    <td>:</td>
+                    <td><input type="text" name="code" th:value="${product.code}" required></td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>:</td>
+                    <td><input type="text" name="description" th:value="${product.description}" required></td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>:</td>
+                    <td><input type="number" name="price" step="any" th:value="${product.price}" required></td>
+                </tr>
+            </table>
+            <button type="button"><a th:href="@{/products}">back</a></button>
+            <button type="submit">Save Product</button>
+        </form>
+    </div>
+</body>
+</html>

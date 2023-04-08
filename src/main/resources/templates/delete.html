@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <link rel="stylesheet" th:href="@{/delete.css}">
+</head>
+
+
+
+<body>  
+	<div class="container">
+        <h2>Delete?</h2>
+        <form th:action="@{/delete/{id}(id=${productCode})}" th:method="post">
+            <table>
+                <tr>
+                    <th>Code</th>
+                    <th>:</th>
+                    <td th:text="${product.code}"></td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <th>:</th>
+                    <td th:text="${product.description}"></td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <th>:</th>
+                    <td th:text="${product.price}"></td>
+                </tr>
+            </table>
+            <button type="button"><a th:href="@{/products}">back</a></button>
+            <button type="submit">delete</button>
+        </form>
+    </div>
+</body>
+
+</html>
